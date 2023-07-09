@@ -3,6 +3,7 @@ import App from "../App";
 import Home from "../pages/Home";
 import CreateUser from "../pages/CreateUser";
 import ViewUser from "../pages/ViewUser";
+import EditUser from "../pages/EditUser";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "/view-user/:id",
         element: <ViewUser />,
+      },
+      {
+        path: "/edit-user/:id",
+        element: <EditUser />,
       },
     ],
   },

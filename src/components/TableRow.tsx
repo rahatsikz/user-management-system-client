@@ -11,6 +11,10 @@ export default function TableRow({ user, idx }: ITable) {
     navigate(`/view-user/${_id}`);
   };
 
+  const handleEdit = () => {
+    navigate(`/edit-user/${_id}`);
+  };
+
   const [deleteUser] = useDeleteUserMutation();
 
   const handleDelete = () => {
@@ -35,7 +39,12 @@ export default function TableRow({ user, idx }: ITable) {
         >
           View
         </button>
-        <button className="btn btn-accent text-white btn-xs">Edit</button>
+        <button
+          className="btn btn-accent text-white btn-xs"
+          onClick={handleEdit}
+        >
+          Edit
+        </button>
         <button
           className="btn btn-error text-white btn-xs"
           onClick={handleDelete}

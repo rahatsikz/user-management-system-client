@@ -5,7 +5,9 @@ import Loader from "../components/Loader";
 export default function ViewUser() {
   const { id } = useParams();
 
-  const { data, isLoading } = useSingleUserQuery(id);
+  const { data, isLoading } = useSingleUserQuery(id, {
+    refetchOnMountOrArgChange: true,
+  });
 
   if (isLoading) {
     return <Loader />;
