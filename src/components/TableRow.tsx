@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { ITable } from "../types/table";
+import { useDeleteUserMutation } from "../redux/api/apiSlice";
+import { toast } from "react-hot-toast";
 
 export default function TableRow({ user, idx }: ITable) {
   const { name, _id } = user;
@@ -7,6 +9,18 @@ export default function TableRow({ user, idx }: ITable) {
 
   const handleView = () => {
     navigate(`/view-user/${_id}`);
+  };
+
+  const [deleteUser] = useDeleteUserMutation();
+
+  const handleDelete = () => {
+    const procced = window.confirm(`Do you want to delete ${name} `);
+    if (procced) {
+      deleteUser(_id);
+      setTimeout(() => {
+        toast.success("Deleted Successfully");
+      }, 1500);
+    }
   };
 
   return (
@@ -22,7 +36,12 @@ export default function TableRow({ user, idx }: ITable) {
           View
         </button>
         <button className="btn btn-accent text-white btn-xs">Edit</button>
-        <button className="btn btn-error text-white btn-xs">Delete</button>
+        <button
+          className="btn btn-error text-white btn-xs"
+          onClick={handleDelete}
+        >
+          Delete
+        </button>
       </th>
     </tr>
   );
