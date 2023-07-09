@@ -14,6 +14,8 @@ export default function EditUser() {
 
   const { data, isLoading } = useSingleUserQuery(id);
 
+  console.log({ isLoading });
+
   const handleUpdate = async (e: {
     preventDefault: () => void;
     target: any;
