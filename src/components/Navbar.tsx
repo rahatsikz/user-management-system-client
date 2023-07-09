@@ -1,6 +1,6 @@
 import { useState } from "react";
 import logo from "../assets/r-logo.png";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const location = useLocation();
@@ -24,15 +24,13 @@ export default function Navbar() {
           role="navigation"
         >
           {/*      <!-- Brand logo --> */}
-          <a
-            id="WindUI"
-            aria-label="WindUI logo"
+          <Link
             aria-current="page"
             className="flex items-center gap-2 whitespace-nowrap py-3 text-lg focus:outline-none lg:flex-1"
-            href="javascript:void(0)"
+            to="/"
           >
             <img src={logo} className="w-20" alt="" />
-          </a>
+          </Link>
           {/*      <!-- Mobile trigger --> */}
           <button
             className={`relative order-10 block h-10 w-10 self-center lg:hidden

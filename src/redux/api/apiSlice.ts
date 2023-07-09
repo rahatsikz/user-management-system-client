@@ -9,7 +9,10 @@ export const api = createApi({
     getUsers: builder.query({
       query: () => "/users",
     }),
+    singleUser: builder.query({
+      query: (id) => `/users/${id}`,
+    }),
   }),
 });
 
-export const { useGetUsersQuery } = api;
+export const { useGetUsersQuery, useSingleUserQuery } = api;

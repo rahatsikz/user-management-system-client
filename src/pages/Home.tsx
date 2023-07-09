@@ -13,7 +13,8 @@ export default function Home() {
   console.log(data?.data);
 
   return (
-    <div className="overflow-x-auto w-9/12 mx-auto">
+    <div className="overflow-x-auto w-8/12 mx-auto mt-8">
+      <h3 className="mb-4 text-center font-mono text-xl">List Of All Users</h3>
       <table className="table">
         {/* head */}
         <thead>
