@@ -1,9 +1,14 @@
+import Loader from "../components/Loader";
 import Table from "../components/TableRow";
 import { useGetUsersQuery } from "../redux/api/apiSlice";
 import { IUser } from "../types/User";
 
 export default function Home() {
   const { data, isLoading } = useGetUsersQuery(undefined);
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   console.log(data?.data);
 
@@ -14,8 +19,9 @@ export default function Home() {
         <thead>
           <tr>
             <th></th>
-            <th>Id</th>
+            <th>ID</th>
             <th>Name</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
