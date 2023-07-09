@@ -28,7 +28,7 @@ export default function CreateUser() {
     form.reset();
   };
   return (
-    <div className="w-1/3 mx-auto mt-8">
+    <div className="xl:w-1/3 w-9/12 mx-auto mt-8">
       <h3 className="mb-4 text-center font-mono text-xl">
         Please Give user details
       </h3>
