@@ -12,7 +12,10 @@ export default function EditUser() {
 
   const [updateUser] = useUpdateUserMutation();
 
-  const { data, isLoading } = useSingleUserQuery(id);
+  const { data, isLoading } = useSingleUserQuery(id, {
+    refetchOnMountOrArgChange: true,
+    pollingInterval: 1000,
+  });
 
   console.log({ isLoading });
 
